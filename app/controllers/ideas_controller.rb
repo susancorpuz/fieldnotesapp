@@ -10,6 +10,8 @@ class IdeasController < ApplicationController
   # GET /ideas/1
   # GET /ideas/1.json
   def show
+    @comments = @idea.comments.all
+    @comment = @idea.comments.build
   end
 
   # GET /ideas/new
@@ -69,6 +71,6 @@ class IdeasController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def idea_params
-      params.require(:idea).permit(:name, :description, :picture)
+      params.require(:idea).permit(:name, :description, :picture, :created_at)
     end
 end
