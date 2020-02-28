@@ -1,6 +1,6 @@
 <div class="row">
-  <div class="col-md-9">
-    <%= image_tag(@idea.picture_url, width: '60%') if @idea.picture.present? %>
+  <div>
+    <%= image_tag(@idea.picture_url, width: '100%') if @idea.picture.present? %>
   <h3>Comments</h3>
 <% @comments.each do |comment| %>
   <div>
@@ -13,8 +13,8 @@
 <%= render partial: 'comments/form', locals: { comment: @comment } %>
   </div>
 
-  <div class="col-md-3">
-    <p><b>Title: </b><%= @idea.name %></p>
+  <div>
+    <p><%= @idea.name %></p>
     <p><b>Date: </b><%= @idea.created_at %></p>
     <p><b>Description: </b><%= @idea.description %></p>
     
@@ -24,4 +24,5 @@
       <%= link_to 'Back', ideas_path %>
     </p>
   </div>
+</div>
 </div>

@@ -1,15 +1,21 @@
-<h1>Listing ideas</h1>
-<table class="table">
-<% @ideas.in_groups_of(3) do |group| %>
+<div class="container">
   <div class="row">
-    <% group.compact.each do |idea| %>
-      <div class="col-md-4">
-        <%= image_tag idea.picture_url(:thumb) if idea.picture.present? %>
-        <h4> Title: <%= link_to idea.name, idea %></h4>
-        <p><b>Description: </b><%= idea.description %></p>
-        <p><b>Date posted: </b><%= idea.created_at %></p>
-      </div>
-    <% end %>
+    <div class="col-md-12">
+    <h1>Listing ideas</h1>
+      
+         <% @ideas.in_groups_of(3) do |group| %>
+        <div class="row">
+          <% group.compact.each do |idea| %>
+          <div class="col-md-4 col-md-4 col-md-4">
+              <%= image_tag idea.picture_url(:thumb) if idea.picture.present? %>
+              <h4><b><%= link_to idea.name, idea %></b></h4>
+              <p><b>Description: </b><%= idea.description %></p>
+              <p><b>Date posted: </b><%= idea.created_at %></p>
+          </div>
+              <% end %>
+        </div>
+      
+        <% end %>
+    </div>
   </div>
-  <table>
-<% end %>
+</div>
