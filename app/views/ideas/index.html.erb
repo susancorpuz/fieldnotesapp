@@ -1,6 +1,8 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
+    <div><br> <%= Time.now %>
+    </div>
     <h1>Listing ideas</h1>
       
          <% @ideas.in_groups_of(3) do |group| %>
@@ -9,8 +11,8 @@
           <div class="col-md-4 col-md-4 col-md-4">
               <%= image_tag idea.picture_url(:thumb) if idea.picture.present? %>
               <h4><b><%= link_to idea.name, idea %></b></h4>
-              <p><b>Description: </b><%= idea.description %></p>
-              <p><b>Date posted: </b><%= idea.created_at %></p>
+              <p><b>Description: </b><%= idea.description %>
+                  [posted on <%= idea.created_at %> | <%= idea.comments.count %> comments ]<p>
           </div>
               <% end %>
         </div>

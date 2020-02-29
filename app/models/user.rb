@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  #attr accessible :email, :name
   include Gravtastic
           gravtastic
   # Include default devise modules. Others available are:
