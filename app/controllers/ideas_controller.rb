@@ -1,6 +1,6 @@
 class IdeasController < ApplicationController
   before_action :set_idea, only: [:show, :edit, :update, :destroy]
-
+ 
   # GET /ideas
   # GET /ideas.json
   def index
@@ -73,4 +73,5 @@ class IdeasController < ApplicationController
     def idea_params
       params.require(:idea).permit(:name, :description, :picture, :created_at)
     end
+   
 end

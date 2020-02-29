@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-    <div><br> <%= Time.now %>
+    <div><br> Today is <%= DateTime.now.strftime("%A, %d %B %Y") %> , <%= DateTime.now.strftime("%I : %M%p") %>
     </div>
     <h1>Listing ideas</h1>
       
@@ -12,7 +12,7 @@
               <%= image_tag idea.picture_url(:thumb) if idea.picture.present? %>
               <h4><b><%= link_to idea.name, idea %></b></h4>
               <p><b>Description: </b><%= idea.description %>
-                  [posted on <%= idea.created_at %> | <%= idea.comments.count %> comments ]<p>
+                  [posted on <%= idea.created_at.strftime("%A, %d %B %Y") %> | <%= idea.comments.count %> comments ]<p>
           </div>
               <% end %>
         </div>
