@@ -19,7 +19,8 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'devise'
 gem 'gravtastic'
-#gem 'bootstrap', '~> 4.4.1'
+gem 'bootstrap', '~> 4.4.1'
+gem 'jquery-rails'
 
 # Use Puma as the app server
 gem 'puma', '~> 4.1'

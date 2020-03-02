@@ -13,4 +13,7 @@ RSpec.describe Idea, type: :model do
     expect(second_description.name).to eq("OMG! It's actually working")
   end
 
+  it "has a date" do
+    date = Idea.create!(date: "14 February 2020")
+    expect(idea.date). to eq("14 February 2020")
 end
