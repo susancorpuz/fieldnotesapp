@@ -21,6 +21,8 @@ gem 'devise'
 gem 'gravtastic'
 gem 'bootstrap', '~> 4.4.1'
 gem 'jquery-rails'
+gem 'kaminari'
+
 
 # Use Puma as the app server
 gem 'puma', '~> 4.1'

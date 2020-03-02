@@ -1,4 +1,6 @@
-<%= form_with(model: idea, local: true) do |form| %>
+<main role="main" class="container">
+  <div class="bg-light p-5 rounded">
+    <%= form_with(model: idea, local: true) do |form| %>
   <% if idea.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(idea.errors.count, "error") %> prohibited this idea from being saved:</h2>
@@ -34,3 +36,6 @@
     <%= form.submit %>
   </div>
 <% end %>
+
+  </div>
+</main>

@@ -14,6 +14,14 @@ RSpec.describe Idea, type: :model do
   end
 
   it "has a date" do
-    date = Idea.create!(date: "14 February 2020")
-    expect(idea.date). to eq("14 February 2020")
+    idea = Idea.create!(created_at: "14 February 2020")
+    second_idea = Idea.create!(created_at: "15 February 2020")
+    expect(second_idea.created_at).to eq("15 February 2020")
+  end
+
+  it "has an update" do
+    idea = Idea.create!(updated_at: "20 February 2020")
+    second_idea = Idea.create!(updated_at: "28 Februray 2020")
+    expect(second_idea.updated_at).to eq("28 February 2020")
+  end
 end

@@ -17,4 +17,6 @@ require("channels")
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+// You can specify which plugins you need
+import { Tooltip, Toast, Popover } from 'bootstrap';
 
