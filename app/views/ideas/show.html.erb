@@ -9,8 +9,10 @@
     <%= image_tag(@idea.picture_url, width: '100%') if @idea.picture.present? %>
   </div>
   <div class="col-md-4">
-    <h2><p><%= @idea.name %></h2>
-    <br><b>posted on: </b><%= @idea.created_at %></p>
+    <div class=row>
+    <h2><p><%= @idea.name %></h2></p>
+    <p><b>posted on: </b><%= @idea.created_at.strftime("%A, %d %B %Y")  %></p>
+    <p><b>updated on: </b><%= @idea.updated_at.strftime("%A, %d %B %Y") if @idea.updated_at.present? %></p>
     <p><b>Description: </b><%= @idea.description %></p>
     
     <p>
@@ -19,9 +21,23 @@
       <%= link_to 'Back', ideas_path %>
     </p>
   </div>
-
+  <div
+    <div class="col-md-12 border">
+       <strong>Data Sources</strong>
+       <ul class="list-group">
+  <li class="list-group-item">Cras justo odio</li>
+  <li class="list-group-item">Dapibus ac facilisis in</li>
+  <li class="list-group-item">Morbi leo risus</li>
+  <li class="list-group-item">Porta ac consectetur ac</li>
+  <li class="list-group-item">Vestibulum at eros</li>
+</ul>
+    </div>
+    </div>
   </div>
-  <div class="col-12">
+  
+</main>
+<subsection>
+ <div class="col-12 bg-light p-5 rounded">
     <h3>Comments</h3>
       <% @comments.each do |comment| %>
 
@@ -36,5 +52,19 @@
 </div>
 </div>
 </div>
-</main>
-
+</subsection>
+<div>
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    <li class="page-item disabled">
+      <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item">
+      <a class="page-link" href="#">Next</a>
+    </li>
+  </ul>
+</nav>
+</div>

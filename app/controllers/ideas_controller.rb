@@ -5,6 +5,7 @@ class IdeasController < ApplicationController
   # GET /ideas.json
   def index
     @ideas = Idea.all
+    @ideas = Idea.order(:idea).page params[:page]
   end
 
   # GET /ideas/1

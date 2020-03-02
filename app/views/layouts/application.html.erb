@@ -42,7 +42,7 @@
           Logged in as <strong><%= current_user.email %></strong>.
           <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
           <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-          <%= image_tag current_user.gravatar_url, :class => "gravatar, rounded-circle" %>
+          <%= image_tag current_user.gravatar_url, :class => "gravatar" %>
           
       <% else %>
           <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
@@ -70,7 +70,9 @@
  <br> 
 <footer>
 <div class="container">
-    Fieldnotes App <%= Time.now.year %>
+    The Fieldnotes App <%= Time.now.year %>  [A Ruby on Rails app. Powered by coffee, cigs, and the moonlight .] <svg class="bi bi-star-fill" width="32" height="32" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6.646 3.646a.5.5 0 01.708 0l6 6a.5.5 0 010 .708l-6 6a.5.5 0 01-.708-.708L12.293 10 6.646 4.354a.5.5 0 010-.708z" clip-rule="evenodd"/></svg>
+    <img src="/assets/images/star-fill.svg" alt="" width="32" height="32" title="Bootstrap">
+    http://susancorpuz.com 
   </div>
 </footer>
 

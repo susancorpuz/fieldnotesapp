@@ -4,7 +4,8 @@
     <div class="row py-lg-5">
       <div class="col-lg-6 col-md-8 mx-auto">
         <h1 class="font-weight-light">My Fieldnotes</h1>
-        <p class="lead text-muted">My Online Fieldnotes. </p>
+        <p class="lead text-muted">My Fieldnotes is a basic template for one researcher.<br>
+        This is still under construction. For suggestions and comments, please contact me@susancorpuz.com</p>
         <p>
           <a href="/pages/info" class="btn btn-primary my-2">View Info</a>
           <a href="/ideas/new" class="btn btn-secondary my-2">Start Notetaking</a>
@@ -26,7 +27,7 @@
 
               <div class="col-md-4 col-md-4 col-md-4">
               <%= image_tag idea.picture_url(:thumb) if idea.picture.present? %>
-               <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" role="img" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+             <!--  <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" role="img" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> -->
               
               <div class="card-body">
                <p class="card-text"><h4><b><%= link_to idea.name, idea %></b></h4><b>Description: </b><%= idea.description %>
@@ -43,12 +44,30 @@
               <% end %>
         </div>
         <% end %>
-        
+         <div>
+         <%= paginate @ideas %>
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    <li class="page-item disabled">
+      <a class="page-link" href="" tabindex="-1" aria-disabled="true">Previous</a>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="/ideas?page=2">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item">
+      <a class="page-link" href="">Next</a>
+    </li>
+  </ul>
+</nav>
+
+</div>
     </div>
+     
     </div>
+    
   </div>
   </div>
-       
+     
        
       </div>
     </div>
