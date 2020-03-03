@@ -12,7 +12,6 @@
  *
  *= require_tree .
  *= require_self
- 
  */
 @import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -22,7 +21,9 @@
     height: 30px;
     width: auto;
   }
-  
+
+
+
   footer {
     background-color: #ebebeb;
     padding: 30px 0;
