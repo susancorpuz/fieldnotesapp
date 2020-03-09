@@ -3,5 +3,4 @@ class Idea < ApplicationRecord
     mount_uploader :picture, PictureUploader
     has_many :comments
     paginates_per 6
-    
 end
