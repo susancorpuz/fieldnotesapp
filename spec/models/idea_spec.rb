@@ -24,4 +24,5 @@ RSpec.describe Idea, type: :model do
     second_idea = Idea.create!(updated_at: "28 Februray 2020")
     expect(second_idea.updated_at).to eq("28 February 2020")
   end
+
 end

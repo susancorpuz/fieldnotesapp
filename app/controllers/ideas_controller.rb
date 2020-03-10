@@ -13,7 +13,6 @@ class IdeasController < ApplicationController
   def show
     @comments = @idea.comments.all
     @comment = @idea.comments.build
-   # @idea =  Idea.find(params["id"])
   end
 
   # GET /ideas/new
@@ -60,7 +59,7 @@ class IdeasController < ApplicationController
   def destroy
     @idea.destroy
     respond_to do |format|
-      format.html { redirect_to ideas_url, notice: 'Idea was successfully destroyed.' }
+      format.html { redirect_to ideas_path, notice: 'Idea was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -75,5 +74,4 @@ class IdeasController < ApplicationController
     def idea_params
       params.require(:idea).permit(:name, :description, :picture, :created_at)
     end
-
 end
