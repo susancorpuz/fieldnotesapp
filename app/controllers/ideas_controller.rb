@@ -13,7 +13,7 @@ class IdeasController < ApplicationController
   def show
     @comments = @idea.comments.all
     @comment = @idea.comments.build
-    @idea =  Idea.find(params["id"])
+   # @idea =  Idea.find(params["id"])
   end
 
   # GET /ideas/new
