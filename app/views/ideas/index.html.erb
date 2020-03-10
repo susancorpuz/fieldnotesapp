@@ -13,60 +13,43 @@
       </div>
     </div>
   </section>
+<!-- TODO: better design -->
+ <h1>Notes cards</h1>
+  <% @ideas.in_groups_of(3) do |group| %>
+<div class="album py-2 bg-light">
+  <div class="container">
 
-<div class="album py-5 bg-light">
-<div class="container">
-  <div class="row">
-  <div class="col-md-12">
-
-    <h1>Notes cards</h1>
-        <% @ideas.in_groups_of(3) do |group| %>
+    <div class="row">
+      <% group.compact.each do |idea| %> 
+      <div class="col-md-4 col-md-4 col-md-4">
        <div class="card mb-4 shadow-sm">
-        <div class="row">
-          <% group.compact.each do |idea| %>
-
-              <div class="col-md-4 col-md-4 col-md-4">
-              <%= image_tag idea.picture_url(:thumb) if idea.picture.present? %>
-             <!--  <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" role="img" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> -->
-              <div class="card-body">
-               <p class="card-text"><h4><b><%= link_to idea.name, idea %></b></h4><b>Description: </b><%= idea.description %>
-                  [posted on <%= idea.created_at.strftime("%A, %d %B %Y") %> | <%= idea.comments.count %> comments ]</p>
-                       <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary"><%= link_to 'View', (idea) %></button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary"><%= link_to 'Edit', edit_idea_path(idea) %> </button>
-                </div>
-                <small class="text-muted">9 mins</small>
-              </div>
-              </div>
-          </div>
-              <% end %>
+                <%= image_tag idea.picture_url(:thumb) if idea.picture.present? %>
+                <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" role="img" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> -->
+                <div class="card-body">
+                  <p class="card-text"><h4><b><%= link_to(idea.name, idea_path(idea)) %></b></h4><b>Description: </b><%= idea.description %> | <small class="text-muted"><%= idea.comments.count %> comments </small></p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-sm btn-outline-secondary"><%= link_to 'View', (idea) %></button>
+                        <button type="button" class="btn btn-sm btn-outline-secondary"><%= link_to 'Edit', edit_idea_path(idea) %> </button>
+                      </div>
+                        <small class="text-muted"><%= idea.created_at.strftime("%a, %d %b %Y") %></small>
+                    </div>
+                  </div>
+                  </div>
         </div>
         <% end %>
-         <div>
-         <%= paginate @ideas %>
-<nav aria-label="Page navigation example">
-  <ul class="pagination justify-content-center">
-    <li class="page-item disabled">
-      <a class="page-link" href="" tabindex="-1" aria-disabled="true">Previous</a>
-    </li>
-    <li class="page-item"><a class="page-link" href="#">1</a></li>
-    <li class="page-item"><a class="page-link" href="/ideas?page=2">2</a></li>
-    <li class="page-item"><a class="page-link" href="#">3</a></li>
-    <li class="page-item">
-      <a class="page-link" href="">Next</a>
-    </li>
-  </ul>
-</nav>
-
-</div>
-    </div>
-    </div>
-  </div>
-  </div>
       </div>
+     </div>
+
     </div>
   </div>
-
+<% end %>
+<div>
+        <nav aria-label="...">
+          <ul class="pagination justify-content-center">
+            <%= paginate @ideas %>
+          </ul>
+        </nav>
+      </div>
 </main>
 
