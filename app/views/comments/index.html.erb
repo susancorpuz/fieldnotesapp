@@ -18,11 +18,11 @@
       <tr>
         <td><%= comment.user_name %></td>
         <td><%= comment.body %></td>
-        <td><%= comment.idea_id %></td>
+        <td><%= comment.idea %></td>
         <td><%= comment.created_at.strftime("%A, %d %B %Y") %></td>
-        <td><%= link_to 'Show', comment %></td>
-        <td><%= link_to 'Edit', edit_comment_path(comment) %></td>
-        <td><%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', idea_comment_path(@idea, comment) %></td>
+        <td><%= link_to 'Edit', edit_idea_comment_path(@idea, comment) %></td>
+        <td><%= link_to 'Destroy', idea_comment_url(@idea, comment), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
       <% end %>
     </tbody>
@@ -30,5 +30,5 @@
 
   <br>
 
-  <%= link_to 'New Comment', new_comment_path %>
+  <%= link_to 'New Comment', new_idea_comment_path(@idea) %>
 </div>

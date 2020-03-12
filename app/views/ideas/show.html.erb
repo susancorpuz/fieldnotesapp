@@ -41,7 +41,7 @@
     <strong>by: <%= comment.user_name %></strong> ( <small> <%= comment.created_at.strftime("%a, %d %b %Y") %> </small> )
     <br>
     <p><%= comment.body %> </p>
-    <p><%= link_to 'Delete', comment_path(comment), method: :delete, data: { confirm: 'Are you sure?' } %> | <%= link_to 'Edit', edit_comment_path(comment) %></p>
+    <p><%= link_to 'Delete', idea_comment_url(@idea, comment), method: :delete, data: { confirm: 'Are you sure?' } %> | <%= link_to 'Edit', edit_idea_comment_url(@idea, comment) %></p>
 <% end %>
     <strong><p>Add Comment:</p></strong>
     <%= render partial: 'comments/form', locals: { comment: @comment } %>

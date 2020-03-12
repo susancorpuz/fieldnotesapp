@@ -10,8 +10,9 @@
 
 <p>
   <strong>Idea:</strong>
-  <%= @comment.idea_id %>
+  <%= @comment.idea %>
 </p>
 
-<%= link_to 'Edit', edit_comment_path(@comment) %> |
-<%= link_to 'Back', comments_path %>
+<%= link_to 'Edit', edit_idea_comment_path(@idea, @comment) %> |
+<%= link_to 'Back', idea_comments_path(@idea) %>
+

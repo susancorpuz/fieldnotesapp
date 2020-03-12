@@ -1,8 +1,7 @@
 <div class="bg-light p-5 rounded">
 <h1>Editing Comment</h1>
 
-<%= render 'form', comment: @comment %>
-
-<%= link_to 'Show', @comment %> |
-<%= link_to 'Back', comment_path %>
+<%= render 'form', comment: @comment, idea: @idea %>
+<%= link_to 'Show', idea_comment_path(@idea, @comment) %> |
+<%= link_to 'Back', idea_comment_path(@idea) %>
 </div>

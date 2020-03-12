@@ -1,7 +1,7 @@
 <div class="bg-light p-5 rounded">
 <h1>New Comment</h1>
 
-<%= render 'form', comment: @comment %>
+<%= render 'form', comment: @comment, idea: @idea%>
 
-<%= link_to 'Back', comments_path %>
+<%= link_to 'Back', idea_comments_path(@idea) %>
 </div>
