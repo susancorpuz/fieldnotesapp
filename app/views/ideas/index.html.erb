@@ -16,12 +16,12 @@
   </section>
 
  <h1>Note cards</h1>
-  <% @ideas.in_groups_of(3) do |group| %>
+  <% Idea.all.in_groups_of(3) do |group| %>
 <div class="album py-2 bg-light">
   <div class="container">
 
     <div class="row">
-     <!-- <% group.compact.each do |idea| %>  -->
+     <% group.compact.each do |idea| %> 
       <div class="col-md-4 col-md-4 col-md-4">
        <div class="card mb-4 shadow-sm">
                 <%= image_tag idea.picture_url(:thumb) if idea.picture.present? %>
@@ -38,7 +38,7 @@
                 </div>
        </div>
       </div>
-       <!-- <% end %> -->
+      <% end %> 
     </div>
    </div>
   </div>
