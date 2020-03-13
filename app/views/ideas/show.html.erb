@@ -5,17 +5,20 @@
   <div class="col-md-8">
     <%= image_tag(@idea.picture_url, width: '100%') if @idea.picture.present? %>
   </div>
-  <div class="col-md-4">
-    <div class=row>
+  <div class="col-md-4 justify-content">
     <h3><%= @idea.name %></h3>
-    <p>
+    <div class=row>
+    
+    <div>
     <small>posted on:<%= @idea.created_at.strftime("%A, %d %B %Y")  %></small><br>
     <small>updated on:<%= @idea.updated_at.strftime("%A, %d %B %Y") if @idea.updated_at.present? %></small></p>
-    <p><b>Description: </b><%= @idea.description %></p>
-    <p>
+    <div><b>Description: </b><%= @idea.description %></div>
+    </div>
+    <div class="justify-content">
       <%= link_to 'Edit', edit_idea_path(@idea) %> |
       <%= link_to 'Delete', idea_path(@idea), method: :delete, data: { confirm: "Delete talaga? Sure ka, 'teh?" } %> |
       <%= link_to 'Back', ideas_path %>
+    </div>
     </p>
   </div>
   <div
