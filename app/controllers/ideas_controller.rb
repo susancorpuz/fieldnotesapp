@@ -7,6 +7,7 @@ class IdeasController < ApplicationController
   # GET /ideas.json
   def index
     @ideas = Idea.all
+            .group("idea.id")
     @ideas = Idea.order(:idea).page params[:page]
   end
 
