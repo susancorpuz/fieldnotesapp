@@ -18,7 +18,7 @@
       <tr>
         <td><%= comment.user_name %></td>
         <td><%= comment.body %></td>
-        <td><%= comment.idea %></td>
+        <td><%= comment.idea.description %></td>
         <td><%= comment.created_at.strftime("%A, %d %B %Y") %></td>
         <td><%= link_to 'Show', idea_comment_path(@idea, comment) %></td>
         <td><%= link_to 'Edit', edit_idea_comment_path(@idea, comment) %></td>
