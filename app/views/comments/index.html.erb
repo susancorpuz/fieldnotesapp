@@ -6,8 +6,9 @@
     <thead>
       <tr>
         <th>User name</th>
-        <th>Body</th>
-        <th>Idea</th>
+        <th>Comment</th>
+        <th>Idea Title</th>
+        <th>Idea Description</th>
         <th>Date Created</th>
         <th colspan="4"></th>
       </tr>
@@ -18,6 +19,7 @@
       <tr>
         <td><%= comment.user_name %></td>
         <td><%= comment.body %></td>
+        <td><%= comment.idea.name %></td>
         <td><%= comment.idea.description %></td>
         <td><%= comment.created_at.strftime("%A, %d %B %Y") %></td>
         <td><%= link_to 'Show', idea_comment_path(@idea, comment) %></td>
@@ -32,3 +34,10 @@
 
   <%= link_to 'New Comment', new_idea_comment_path(@idea) %>
 </div>
+<div>
+        <nav aria-label="...">
+          <ul class="pagination justify-content-center">
+            <%= paginate @comments %>
+          </ul>
+        </nav>
+      </div>

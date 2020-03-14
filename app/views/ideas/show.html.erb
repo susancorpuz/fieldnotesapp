@@ -2,13 +2,15 @@
   <div class="bg-light p-5 rounded">
     <div class="col-md-12">
 <div class="row">
+<% if @idea %>
   <div class="col-md-8">
     <%= image_tag(@idea.picture_url, width: '100%') if @idea.picture.present? %>
   </div>
+<% end %>
   <div class="col-md-4 justify-content">
     <h3><%= @idea.name %></h3>
     <div class=row>
-    
+
     <div>
     <small>posted on:<%= @idea.created_at.strftime("%A, %d %B %Y")  %></small><br>
     <small>updated on:<%= @idea.updated_at.strftime("%A, %d %B %Y") if @idea.updated_at.present? %></small></p>
@@ -53,3 +55,10 @@
 </div>
 </div>
 </section>
+<div>
+        <nav aria-label="...">
+          <ul class="pagination justify-content-center">
+            <%= paginate @ideas, views_prefix: '' %>
+          </ul>
+        </nav>
+      </div>

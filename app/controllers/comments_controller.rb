@@ -7,6 +7,7 @@ class CommentsController < ApplicationController
   # GET /comments.json
   def index
     @comments = @idea.comments
+    @comments = Comment.order(:comment).page params[:page]
   end
 
   # GET /comments/1
@@ -69,7 +70,7 @@ class CommentsController < ApplicationController
   end
 
   def set_comment
-    @comment = @idea.comments.find(params[:id])
+    @comment = @idea.comments.find(params[:idea_id])
   end
 
   # Only allow a list of trusted parameters through.

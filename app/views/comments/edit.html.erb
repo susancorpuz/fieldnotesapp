@@ -2,6 +2,7 @@
 <h1>Editing Comment</h1>
 
 <%= render 'form', comment: @comment, idea: @idea %>
-<%= link_to 'Show', idea_comment_path(@idea, @comment) %> |
-<%= link_to 'Back', idea_path(@idea, @comment) %>
+<%= link_to 'Show', idea_comment_path(@idea, @comment) %> 
+<%= link_to 'Show All', idea_comment_path(@idea, @comment) %> 
+<%= link_to 'Back', idea_path(@idea) %>
 </div>

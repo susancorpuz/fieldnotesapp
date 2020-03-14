@@ -5,9 +5,11 @@ class IdeasController < ApplicationController
 
   # GET /ideas
   # GET /ideas.json
+  # NOTE: .group  is for Heroku experiment for pagination to work.
+  # .group can be removed
   def index
     @ideas = Idea.all
-            .group("idea.id")
+                 .group("idea.id")
     @ideas = Idea.order(:idea).page params[:page]
   end
 
@@ -16,6 +18,7 @@ class IdeasController < ApplicationController
   def show
     @comments = @idea.comments.all
     @comment = @idea.comments.build
+    @ideas = Idea.order(:idea).page params[:page]
   end
 
   # GET /ideas/new

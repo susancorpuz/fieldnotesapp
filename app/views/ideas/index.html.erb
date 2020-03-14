@@ -16,7 +16,7 @@
   </section>
 
  <h1>Note cards</h1>
-  <% Idea.all.in_groups_of(3).each do |row| %>
+  <% @ideas.in_groups_of(3).each do |row| %>  <%# TODO: FIXME: pagination NOTE: change to Ideas.all when push to Heroku, but pagintatio will not work %>
 <div class="album py-2 bg-light">
   <div class="container">
 
@@ -26,7 +26,7 @@
        <div class="card mb-4 shadow-sm">
        <% if idea %>
                 <%= image_tag idea.picture_url(:thumb) if idea.picture.present? %>
-                <!--TODO: if no uploaded photo use this placeholder  <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" role="img" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> -->
+                <%# TODO: if no uploaded photo use this placeholder  <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" role="img" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> %>
                   <div class="card-body">
                   <p class="card-text"><h4><b><%= link_to(idea.name, idea_path(idea)) %></b></h4><b>Description: </b><%= idea.description %>  <small><%= link_to(idea.comments.count) %> comments </small></p>
                     <div class="d-flex justify-content-between align-items-center">
@@ -45,6 +45,7 @@
    </div>
   </div>
 <% end %>
+      <div>
         <nav aria-label="...">
           <ul class="pagination justify-content-center">
             <%= paginate @ideas %>
