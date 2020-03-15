@@ -9,7 +9,7 @@ class IdeasController < ApplicationController
   # .group can be removed
   def index
     @ideas = Idea.all
-                 .group("idea.id")
+    @ideas = Idea.group(:idea)
     @ideas = Idea.order(:idea).page params[:page]
   end
 
@@ -80,4 +80,8 @@ class IdeasController < ApplicationController
   def idea_params
     params.require(:idea).permit(:name, :description, :picture, :created_at)
   end
+
+  # def page_param
+  #   params.fetch(:page, 1)
+  # end
 end

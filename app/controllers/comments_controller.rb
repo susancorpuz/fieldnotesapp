@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
   # GET /comments.json
   def index
     @comments = @idea.comments
-    @comments = Comment.order(:comment).page params[:page]
+    @comments = @idea.comments.order(:comment).page params[:page]
   end
 
   # GET /comments/1

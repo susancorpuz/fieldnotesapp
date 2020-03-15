@@ -16,12 +16,12 @@
   </section>
 
  <h1>Note cards</h1>
-  <% @ideas.in_groups_of(3).each do |row| %>  <%# TODO: FIXME: pagination NOTE: change to Ideas.all when push to Heroku, but pagintatio will not work %>
+  <% Idea.all.in_groups_of(3).each do |group| %>  <%# TODO: FIXME: pagination NOTE: change to Idea.all when push to Heroku, but pagintatio will not work %>
 <div class="album py-2 bg-light">
   <div class="container">
 
     <div class="row">
-     <% row.each do |idea| %> 
+     <% group.each do |idea| %> 
       <div class="col-md-4 col-md-4 col-md-4">
        <div class="card mb-4 shadow-sm">
        <% if idea %>
