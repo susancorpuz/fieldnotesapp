@@ -15,7 +15,7 @@
     </thead>
 
     <tbody>
-      <% @comments.each do |comment| %>
+      <% Comment.all.each do |comment| %> <%# TODO: FIXME: pagination NOTE: change to Comment.all from @comment when push to Heroku, but pagintatio will not work %>
       <tr>
         <td><%= comment.user_name %></td>
         <td><%= comment.body %></td>
