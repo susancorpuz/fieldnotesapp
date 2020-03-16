@@ -15,8 +15,8 @@
     </div>
   </section>
 
- <h1>Note cards</h1>
-  <% Idea.all.in_groups_of(3).each do |group| %>  <%# TODO: FIXME: pagination NOTE: change to Idea.all when push to Heroku, but pagintatio will not work %>
+<h1>Note cards</h1>
+  <% Idea.all.in_groups_of(3).each do |group| %>  <%# TODO: FIXME: pagination NOTE: change to Idea.all when push to Heroku, but pagintation will not work %>
 <div class="album py-2 bg-light">
   <div class="container">
 
@@ -37,14 +37,14 @@
                         <small class="text-muted"><%= idea.created_at.strftime("%a, %d %b %Y") %></small>
                     </div>
                   </div>
-        <% end %>
+       <% end %>
        </div>
       </div>
       <% end %>
     </div>
    </div>
-  </div>
-<% end %>
+</div>
+  <% end %>
       <div>
         <nav aria-label="...">
           <ul class="pagination justify-content-center">
