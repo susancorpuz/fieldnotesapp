@@ -5,7 +5,7 @@ class IdeasController < ApplicationController
 
   # GET /ideas
   # GET /ideas.json
-  # NOTE: .group  is for Heroku experiment for pagination to work.
+  # NOTE: .group  is for Heroku experiment for pagination to work but didn't.
   # .group can be removed
   def index
     @ideas = Idea.all

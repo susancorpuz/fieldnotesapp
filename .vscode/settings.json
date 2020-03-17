@@ -1,2 +1,7 @@
 {
+  "peacock.affectAccentBorders": true,
+  "peacock.affectTabActiveBorder": true,
+  "git.scanRepositories": [
+		"/Users/susancorpuz/Sites/fieldnotesapp"
+	]
 }
