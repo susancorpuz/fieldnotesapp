@@ -5,11 +5,11 @@ class IdeasController < ApplicationController
 
   # GET /ideas
   # GET /ideas.json
-  # NOTE: .group  is for Heroku experiment for pagination to work but didn't.
+  # NOTE: .group  is for Heroku experiment for pagination to work but it didn't.
   # .group can be removed
   def index
     @ideas = Idea.all
-    @ideas = Idea.group(:idea)
+    # @ideas = Idea.group(:idea, :id).to_a.in_groups_of(3) each do |@idea| #=begin testing this code for pagination =end
     @ideas = Idea.order(:idea).page params[:page]
   end
 
@@ -81,7 +81,7 @@ class IdeasController < ApplicationController
     params.require(:idea).permit(:name, :description, :picture, :created_at)
   end
 
-  # def page_param
-  #   params.fetch(:page, 1)
-  # end
+   def page_param
+     params.fetch(:page, 1)
+   end
 end
