@@ -81,7 +81,7 @@ class IdeasController < ApplicationController
     params.require(:idea).permit(:name, :description, :picture, :created_at)
   end
 
-   def page_param
-     params.fetch(:page, 1)
-   end
+  def page_param
+    params.fetch(:page, 1)
+  end
 end
