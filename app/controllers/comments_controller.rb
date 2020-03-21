@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 class CommentsController < ApplicationController
   before_action :set_idea
   before_action :set_comment, only: %i[show edit update destroy]
@@ -57,7 +58,7 @@ class CommentsController < ApplicationController
   def destroy
     @comment.destroy
     respond_to do |format|
-      format.html { redirect_to post_comments_url(@post), notice: 'Comment was successfully destroyed.' }
+      format.html { redirect_to idea_comments_url(@idea), notice: 'Comment was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

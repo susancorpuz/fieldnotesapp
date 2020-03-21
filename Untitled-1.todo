@@ -1,0 +1,101 @@
+
+fieldnotesapp:
+  ideas_index:  @file:///Sites/fieldnotesapp/app/views/ideas
+  ☐ Fix pagination
+  ☐ Review _in_groups_by key
+
+  ✔  create idea @done(20-02-27 13:07) @file:///Sites/fieldnotesapp/app/views/ideas
+  - association: comment, user
+  - schema: name, description, picture, created_at, updated_at
+
+  ✔  create user @done(20-03-03 13:07) @file:///Sites/fieldnotesapp/app/model/user.rb
+  - association: idea, comment
+  - schema: email, encrypted_password, reset_password_token, reset_password, sent_at, remember_created_at, created_at, updated_at, index_users_on_email_ index_users_on_reset_password_token
+
+  ☐  admin_user backend
+  - association: has_many: :user
+  - schema
+
+  ✔  create comment @done(20-03-03 13:07) @file:///Sites/fieldnotesapp/app/views/comments
+  - association: user, idea
+  - schema: user.name, body, idea_id, created_at, updated_at
+
+  ☐ create model category
+  - association: idea, tag
+  - schema:
+
+  ☐ create model tag
+  - association: category,
+  - schema:
+
+  ☐ create model activity
+  - schema: :id, dateTIme, myLocation, actitivyDescription, journal, todo
+  - association: todo, tag, category, idea,
+  - print in table form //IDEA
+
+  ☐  create myLocation
+  - locate from google maps, (apple) maps,
+  - upload own map (?) //IDEA
+
+  ☐ create model todo
+  - schema: :id, date, time, location, activity, category, tag
+  - associtaion: category,
+
+  ☐ create model journal
+  - schema: :
+  - association:
+  - nested app? under Notecard, Activity //IDEA
+
+  ☐  rspec
+    ☐ idea @file:///Sites/fieldnotesapp/app/spec/models/idea_spec.rb
+    ☐ user @file:///Sites/fieldnotesapp/app/spec/models/user_spec.rb
+    ☐ comment
+    ☐ category
+    ☐ tag
+    ☐ activity
+    ☐ todo
+
+  ☐ Features:
+    ☐ Export to: pdf, txt, mb
+    ☐ Upload files: pdf, txt, mb, doc, xls, ppt
+    ☐ Share to: email, google drive, dropbox, icloud, github
+    ☐ Import/Upload from: cloud services, local file
+    ☐ Print document to printer, to pdf
+
+  ☐ Fieldnotes app hierarchy
+  |-User
+    |-Note card (idea)
+      |- Activity (pubic option is open for comments from other users)
+      |  |- Location, Date, Time, General Description // public
+      |  |- Sources/ Attachments: photos, videos, audios, docs //private/public
+      |  |- Analysis, Findings // public, private option //private/public
+      |  |- Journal //this is where researcher writes personal observations
+      |            // preferably private but has option to make public
+      |  |- Todo
+      |- Category
+      |   |- Tag
+      |- Print/Export/Share Note card
+          |- Activity
+          |- Analysis
+          |- Journal
+          |- Append Activity and Analysis
+          |- Append All
+
+
+
+
+
+
+
+
+  ///FIXME //  Nemo nesciunt sapiente eaque nihil recusandae odio esse doloremque.
+// //  Adipisci consequuntur doloribus libero officiis. Dignissimos reiciendis harum labore ut magnam tempore nam dolorem. Perspiciatis dicta fuga in non est libero ad qui. Ut cumque eos necessitatibus consequatur nostrum. Tempora accusamus beatae excepturi.  //
+XXX  //HACK
+// // eoejefojefoefoeofnefenfskelfnefkslfekfnkselfknsefkseknseklf;sknfkelf;selknfekslseknfkslelfksenfksleflksnef 
+ //TODO:  what to do now?  //  here you put a commnet //
+ and then start again  //FIXME  //
+
+And there can be  nothing more that can be done.
+Adieu. and Goodbye. //REVIEW // Mag-aral ka na huy!
+
+

@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   end
 
   get 'pages/info'
+  get 'pages/readme'
   root to: redirect('/ideas')
 
   resources :ideas do
